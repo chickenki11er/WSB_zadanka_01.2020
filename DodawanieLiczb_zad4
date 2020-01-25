@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args) {
+
+            double sum = 0;
+            double n;
+
+            do
+            {
+                Console.Write("Give me the number you want to add: ");
+                n = Convert.ToDouble(Console.ReadLine());
+
+                sum = sum + n;
+                Console.WriteLine(sum);
+            } while (n != 0);
+
+            Console.ReadKey();
+        }
+    }
+}
