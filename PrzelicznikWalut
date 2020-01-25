@@ -1,0 +1,52 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args) {
+
+            double n;
+            int a;
+
+            do
+            {
+                Console.Write("Give me value in zloty: ");
+                n = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Choose currency:");
+                Console.WriteLine("1. jen");
+                Console.WriteLine("2. bat");
+                Console.WriteLine("3. forint");
+                Console.WriteLine("4. kuna");
+
+                a = Convert.ToInt32(Console.ReadLine());
+                switch (a)
+                {
+                    case 1:
+                        n = n / 3.4871 * 100;
+                        Console.WriteLine("The value in jen is {0}", n);
+                        break;
+                    case 2:
+                        n = n / 0.1261;
+                        Console.WriteLine("The value in bat is {0}", n);
+                        break;
+                    case 3:
+                        n = n / 1.2655 * 100;
+                        Console.WriteLine("The value in forint is {0}", n);
+                        break;
+                    case 4:
+                        n = n / 0.5710;
+                        Console.WriteLine("The value in kuna is {0}", n);
+                        break;
+                    default:
+                        Console.WriteLine("The value is wrong");
+                        break;
+                }
+            } while (a <= 4);
+
+            Console.ReadKey();
+        }
+
+    }
+}
