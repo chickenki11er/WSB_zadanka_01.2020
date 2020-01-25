@@ -1,0 +1,23 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args) {
+
+            int n;
+            Console.Write("Give me integer: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= 9; i++) {
+                if (n % i == 0) {
+                    Console.WriteLine("The number is divided by {0}", i);
+                }
+            }
+
+            Console.ReadKey();
+        }
+
+    }
+}
