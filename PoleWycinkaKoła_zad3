@@ -1,0 +1,49 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args) {
+
+            double r;
+            double s;
+            double area = 0;
+
+            try
+            {
+                Console.Write("Give me radius in meteres: ");
+                r = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Give me angle: ");
+                s = Convert.ToDouble(Console.ReadLine());
+
+                if (s <= 0)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("angle cannot be less or equal 0");
+                }
+                else if (s > 360)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("angle cannot be more than 0");
+                }
+                else if (r <= 0)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("radius cannot be less or equal 0");
+                }
+                else
+                {
+                    area = (s / 360) * Math.PI * r * r;
+                    Console.WriteLine("The area is equal {0}", area);
+                }
+            }
+            catch (Exception e) {
+                Console.WriteLine("Error");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
