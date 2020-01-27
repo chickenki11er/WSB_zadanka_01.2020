@@ -1,0 +1,180 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp1
+{
+    class Task
+    {
+
+        public void CircleSector() {
+            
+            double r;
+            double s;
+            double area = 0;
+
+            try
+            {
+                Console.WriteLine("You selected nr 1- Area of cilcular sector");
+                Console.WriteLine("");
+                Console.WriteLine("P= ( angle / 360 ) * Pi * r^2;  where r- radius");
+                Console.Write("Give me radius in meteres: ");
+                r = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Give me angle: ");
+                s = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("");
+
+                if (s <= 0)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("angle cannot be less or equal 0");
+                }
+                else if (s > 360)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("angle cannot be more than 0");
+                }
+                else if (r <= 0)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("radius cannot be less or equal 0");
+                }
+                else
+                {
+                    area = (s / 360) * Math.PI * r * r;
+                    Console.WriteLine("The area is equal {0} meters^2", area);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error");
+            }
+
+        }
+
+        public void ArithSeq() {
+            
+            int n;
+            int sum=0;
+
+
+            try
+            {
+                Console.WriteLine("You selected nr 2- Sum of the arithmetic sequence: an= 3n + 1");
+                Console.WriteLine("");
+                Console.WriteLine("Sn = ( ( a1 + an ) / 2 ) * n;  where: n- size of sequence, a1- first value, an- last value");
+                Console.Write("Give me size of this sequence: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("");
+
+                int[] tab = new int[n];
+
+                if (n <= 0)
+                {
+                    Console.WriteLine("Error: Size cannot be negative");
+                }
+                else if (n == 1) {
+                    tab[0] = 3 * n + 1;
+                    Console.WriteLine("The sum of this sequence is equal { 0 }", sum);
+                }
+                else
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        tab[i] = 3 * (i + 1) + 1;
+                    }
+
+                    sum = (tab[0] + tab[n - 1]) / 2 * n;
+                    Console.WriteLine("The sum of this sequence is equal {0}", sum);
+                }
+            }
+            catch (Exception e) {
+                Console.WriteLine("Error");
+            }
+
+        }
+
+        public void Triangle() {
+            double h;
+            double a;
+            double area;
+
+            try
+            {
+                Console.WriteLine("You selected nr 3- Height and area of the equilateral triangle");
+                Console.WriteLine("");
+                Console.WriteLine("h = ( a * sqrt(3) ) / 2; P= ( a^2 * sqrt(3) ) / 4;  where a- side of triangle");
+                Console.Write("Give me value of triangle side: ");
+                a = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("");
+
+                if (a <= 0)
+                {
+                    Console.WriteLine("Error: Side has to be more than 0");
+                }
+                else
+                {
+                    h = (a * Math.Sqrt(3)) / 2;
+                    area = (a * a * Math.Sqrt(3)) / 4;
+
+                    Console.WriteLine("The height of this triangle is equal {0} units", h);
+                    Console.WriteLine("The area of this triangle is equal {0} units^2", area);
+                }
+            }
+            catch (Exception e) {
+                Console.WriteLine("Error");
+            }
+
+        }
+
+        public void Sphere() {
+            double r;
+            double area;
+            double volume;
+            try {
+                Console.WriteLine("You selected nr 4- Area and Volume of the sphere");
+                Console.WriteLine("");
+                Console.WriteLine("P = 4 * Pi * r^2, V = ( 4 / 3 ) * Pi * r^3; where: r- radius");
+                Console.Write("Give me radius: ");
+                r = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("");
+
+                if (r <= 0) {
+                    Console.WriteLine("Error: Radius has to be more than 0");
+                }
+                else {
+                    area = 4 * Math.PI * r * r;
+                    volume = (4.0 / 3) * Math.PI * r * r * r;
+                    Console.WriteLine("The area of sphere is equal {0} units^2", area);
+                    Console.WriteLine("The volume of sphere is equal {0} units^3", volume);
+                }
+            }catch (Exception e)
+            {
+                Console.WriteLine("Error");
+            }
+
+        }
+
+        public void Angles() {
+            double a;
+
+            try
+            {
+                Console.WriteLine("You selected nr 5- Values of sinus, cosinus and tangens");
+                Console.WriteLine("");
+                Console.Write("Give me the angle in degrees: ");
+                a = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("");
+
+                Console.WriteLine("The value of sinus is equal {0} ", Math.Sin(a / 360));
+                Console.WriteLine("The value of cosinus is equal {0} ", Math.Cos(a / 360));
+                Console.WriteLine("The value of tangens is equal {0} ", Math.Tan(a / 360));
+
+            }
+            catch (Exception e) {
+                Console.WriteLine("Error");
+            }
+        }
+    }
+}
