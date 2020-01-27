@@ -1,0 +1,76 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Tablice_Matematyczne
+    {
+        static void Main(string[] args) {
+
+            int a;
+
+            Console.WriteLine("Welcome. The author of this programe is Łukasz Michowski, index nr 53434");
+            
+            try
+            {
+                do
+                {
+
+                    Console.WriteLine("-----------------------------------------------");
+                    Console.WriteLine("Choose the function you want to try");
+                    Console.WriteLine("");
+                    Console.WriteLine("1. Area of cilcular sector");
+                    Console.WriteLine("2. Sum of the arithmetic sequence: an= 3n + 1");
+                    Console.WriteLine("3. Height and area of the equilateral triangle");
+                    Console.WriteLine("4. Area and Volume of the sphere");
+                    Console.WriteLine("5. Values of sinus, cosinus and tangens");
+                    Console.WriteLine("6. Exit");
+                    Console.Write("Type number: ");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("-----------------------------------------------");
+
+                    
+                    
+                    if (a > 6) {
+                        Console.WriteLine("Error: Wrong number typed");
+                        continue;
+                    } 
+
+                    Task Task;
+
+                    switch (a)
+                    {
+                        case 1:
+                            Task = new Task();
+                            Task.CircleSector();
+                            break;
+                        case 2:
+                            Task = new Task();
+                            Task.ArithSeq();
+                            break;
+                        case 3:
+                            Task = new Task();
+                            Task.Triangle();
+                            break;
+                        case 4:
+                            Task = new Task();
+                            Task.Sphere();
+                            break;
+                        case 5:
+                            Task = new Task();
+                            Task.Angles();
+                            break;
+                        case 6:
+                            Console.WriteLine("Bye Bye");
+                            break;
+                    }
+                } while (a < 6);
+            }
+            catch (Exception e) {
+                Console.WriteLine("Error: Wrong given values");
+            }
+
+            Console.ReadKey();
+        }
+
+    }
+}
